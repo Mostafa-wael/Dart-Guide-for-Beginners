@@ -25,6 +25,17 @@ int getNum()
 Output:
 hello 
 123 
+
+void main()
+{
+  printInRange(0, 5, 1);
+}
+
+void printInRange(int start, int end, int step)
+{
+  for(int i = start; i< end; i+=step)
+    {print("${i}");}
+}
 -------------------------------
 ? Optional Parameters
 Optional parameters can be used when arguments need not be  passed for a function’s execution.
@@ -46,6 +57,16 @@ test_param(n,[p1]) {
 Output:
 123 
 null 
+void main()
+{
+  printInRange(0, 5);
+}
+
+void printInRange( start,  end, [step=1])
+{
+  for(dynamic i = start; i< end; i+=step)
+    {print("${i}");}
+}
 ---------
 *2.	Optional named parameter
 Unlike positional parameters, the parameter''s name must be specified while the value is being passed.
@@ -69,6 +90,17 @@ hello
 
 123 
 world
+
+void main()
+{
+  printInRange(start:0, end:5);
+}
+
+void printInRange({start,  end, step:1})
+{
+  for(dynamic i = start; i< end; i+=step)
+    {print("${i}");}
+}
 ---------
 *3	Optional Parameters with Default Values
 Function parameters can also be assigned values by default. However, such parameters can also be explicitly passed values.
@@ -83,6 +115,17 @@ void test_param(n1,{p1:12}) {
 Output:
 123 
 12 
+
+void main()
+{
+  printInRange(0, 5);
+}
+
+void printInRange( start,  end, [step=1])
+{
+  for(dynamic i = start; i< end; i+=step)
+    {print("${i}");}
+}
 --------------------------------
 ?Lambda Functions
 These functions are also called as Arrow functions.

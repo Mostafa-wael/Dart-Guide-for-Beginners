@@ -118,3 +118,80 @@ void main() {
   city.num = 12;
   city.display();
 }
+
+// ----------------------------------------------------------------
+// ? Example 6.
+void main() {
+  user U1 = new user("Mostafa", 20);
+  U1.printData();
+  
+  print(U1.doubleAge);
+
+  subUser U2 = new subUser("Wael", 30);
+  U2.newAge = 50;
+  
+  U2.printData();
+  U2.display();
+  
+  
+  city.display();
+  city.number = 5;
+  city.display();
+}
+
+class user {
+  String? name;
+  int? age;
+
+  user(String name, int age) {
+    this.name ??= name;
+    this.age ??= age;
+  }
+  
+  int get doubleAge 
+  {
+    return (age ?? 0) * 2;
+   }
+  void set newAge(int n)
+  {
+      age = n;
+  }
+  
+  printData() {
+    print(name);
+    print(age);
+  }
+}
+
+class subUser extends user
+{
+  subUser(String n, int a): super(n, a);
+  
+  void display()
+  {
+    print("Hi");
+  }
+  
+  printData() {
+    print("Name: ${name}");
+    print("Age: ${age}");
+  }
+  
+}
+
+class city
+{
+  static int number = 1;
+  static void display()
+  {
+    print(number);
+  }
+}
+
+
+
+
+
+
+
+
